@@ -67,6 +67,8 @@ const autocomplete = inp => {
 
         b.classList.add('autocomplete-item');
 
+        b.style.zIndex = 100;
+
         imgtxt.appendChild(image);
         imgtxt.appendChild(text);
         b.appendChild(imgtxt);
@@ -75,10 +77,10 @@ const autocomplete = inp => {
 
         b.addEventListener("click", e => {
 
-            inp.value = e.target.querySelector(".url").innerText;
-            SelectedUrl = e.target.querySelector(".url").innerText;
+            inp.value = b.querySelector(".url").innerText;
+            SelectedUrl = b.querySelector(".url").innerText;
 
-            const src = e.target.querySelector("img").getAttribute('src');
+            const src = b.querySelector("img").getAttribute('src');
 
             getDataUri(src, dataUri => {
                 SelectedImage = dataUri;
