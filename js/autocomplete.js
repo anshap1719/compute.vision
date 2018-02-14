@@ -115,6 +115,27 @@ const autocomplete = inp => {
         }
     });
 
+    // Requires Utils.js to be imported first
+    addListenerMulti(inp, 'keydown keyup change', () => {
+        if (inp.value === "") {
+            document.querySelector('.autocomplete').classList.remove('is-loading');
+        } else {
+            document.querySelector('.autocomplete').classList.add('is-loading');
+        }
+    });
+
+    inp.addEventListener('focus', () => {
+        if (inp.value === "") {
+            document.querySelector('.autocomplete').classList.remove('is-loading');
+        } else {
+            document.querySelector('.autocomplete').classList.add('is-loading');
+        }
+    });
+
+    inp.addEventListener('blur', () => {
+        document.querySelector('.autocomplete').classList.remove('is-loading');
+    });
+
     document.addEventListener("click", e => {
         closeAllLists(e.target);
     });
