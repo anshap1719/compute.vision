@@ -162,3 +162,17 @@ h4 {
 #url-content.is-active {
     display: flex !important;
 }
+
+.try-more-item img {
+    height: 200px;
+    margin: 31px 0 10px;
+    vertical-align: bottom;
+}
+
+.try-more-item a {
+    margin-top: 20px;
+}
+
+.try-more-item {
+    justify-content: space-between;
+}

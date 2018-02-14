@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color: #F5F5F5;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,17 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- build:css -->
     <link rel="stylesheet" href="./css/bulma.css">
+    <link rel="stylesheet" href="css/headline.css">
     <link rel="stylesheet" href="./css/styles.css">
     <!-- endbuild -->
     <title>Landing - ColorPicker</title>
 </head>
-<body>
+<body style="background-color: #F5F5F5">
 
     <section class="section" id="cta">
         <div class="container">
             <div class="is-flex cta has-text-centered">
-                <h1 class="title">Similar Logo Finder</h1>
-                <h2 class="subtitle">Powered by Quickcompany</h2>
+                <div class="headline">
+                    <h3 class="logo-container">
+                        <div class="logo"></div>
+                        <i>Similar Logo Finder</i>
+                    </h3>
+                    <p><i>Powered&nbsp;by&nbsp;<a href="http://quickcompany.in">Quickcompany</a></i></p>
+                </div>
                 <div class="tabs is-centered is-medium is-toggle is-fullwidth">
                     <ul>
                         <li class="is-active" id="url">
@@ -63,30 +69,41 @@
     <section class="section" id="more-tools">
         <div class="container">
             <div class="columns">
-                <div class="column has-text-centered">
-                    <img src="" alt="">
+                <div class="column is-flex cta try-more-item has-text-centered">
+                    <img src="assets/tabig.png" alt="">
                     <h2 class="subtitle">Find Similar Logos</h2>
                     <p>Of Popular Brands From The Top Million Websites</p>
-                    <a class="button is-primary">Try Now</a>
+                    <a class="button is-primary" onclick="similarLogo()">Try Now</a>
                 </div>
-                <div class="column has-text-centered">
-                    <img src="" alt="">
+                <div class="column is-flex cta try-more-item has-text-centered">
+                    <img src="assets/sanity.png" alt="">
                     <h2 class="subtitle">Sanity Check</h2>
                     <p>for uniqueness / freshness of your Logo</p>
-                    <a class="button is-primary">Try Now</a>
+                    <a class="button is-primary" onclick="imageUpload()">Try Now</a>
                 </div>
-                <div class="column has-text-centered">
-                    <img src="" alt="">
+                <div class="column is-flex cta try-more-item has-text-centered">
+                    <img src="assets/color-picker.png" alt="">
                     <h2 class="subtitle">Explore Logos</h2>
                     <p>based on multiple Color Profiles</p>
-                    <a class="button is-primary">Try Now</a>
+                    <a class="button is-primary" href="colorpicker.html">Try Now</a>
                 </div>
-                <div class="column has-text-centered">
-                    <img src="" alt="">
+                <div class="column is-flex cta try-more-item has-text-centered">
+                    <img src="assets/generator.png" alt="">
                     <h2 class="subtitle">Logo Generator</h2>
                     <p>using Generative Adversarial Networks</p>
-                    <a class="button is-primary">Coming Soonish</a>
+                    <a class="button is-primary" disabled>Coming Soonish</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="sample-results">
+        <div class="container">
+            <div class="is-flex cta has-text-centered">
+                <h1 class="title">Sample Results</h1>
+                <hr>
+                <h2 class="subtitle">Shape Similarity</h2>
+                <h3>Implemented using a concoction of Contour, Region, Histogram & Hull techniques. Sometimes brilliant, mostly good, at times bollocks</h3>
             </div>
         </div>
     </section>
