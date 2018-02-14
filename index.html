@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- build:css -->
+    <link rel="stylesheet" href="./css/bulma.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- endbuild -->
+    <title>Landing - ColorPicker</title>
+</head>
+<body>
+
+    <section class="section" id="cta">
+        <div class="container">
+            <div class="is-flex cta has-text-centered">
+                <h1 class="title">Similar Logo Finder</h1>
+                <h2 class="subtitle">Powered by Quickcompany</h2>
+                <div class="tabs is-centered is-medium is-toggle is-fullwidth">
+                    <ul>
+                        <li class="is-active" id="url">
+                            <a>
+                                <span class="icon is-small"><i class="fab fa-safari"></i></span>
+                                <span>Enter A URL</span>
+                            </a>
+                        </li>
+                        <li id="image">
+                            <a>
+                                <span class="icon is-small"><i class="fas fa-image"></i></span>
+                                <span>Upload An Image</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-actions">
+                    <div id="url-content" class="is-flex cta has-text-centered tab-content is-active">
+                        <p>Search for similar designs from the logos of top million websites</p>
+                        <br>
+                        <div class="field" id="searchContainer">
+                            <div class="control is-medium is-loading autocomplete">
+                                <input class="input is-medium" autocomplete="off" id="search" type="text" placeholder="Enter a website URL Eg:spotify.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="image-content" class="tab-content">
+                        <p>Upload your design / logo for similar logos</p>
+                        <br>
+                        <div class="file-drop-area">
+                            <span class="fake-btn">Choose files</span>
+                            <span class="file-msg js-set-number">or drag and drop files here</span>
+                            <input class="file-input" type="file" multiple>
+                        </div>
+                        <canvas id="canvasu" class="center" style="visibility: hidden; position: absolute"></canvas>
+                        <div class="inter" style="padding-left: 100px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="more-tools">
+        <div class="container">
+            <div class="columns">
+                <div class="column has-text-centered">
+                    <img src="" alt="">
+                    <h2 class="subtitle">Find Similar Logos</h2>
+                    <p>Of Popular Brands From The Top Million Websites</p>
+                    <a class="button is-primary">Try Now</a>
+                </div>
+                <div class="column has-text-centered">
+                    <img src="" alt="">
+                    <h2 class="subtitle">Sanity Check</h2>
+                    <p>for uniqueness / freshness of your Logo</p>
+                    <a class="button is-primary">Try Now</a>
+                </div>
+                <div class="column has-text-centered">
+                    <img src="" alt="">
+                    <h2 class="subtitle">Explore Logos</h2>
+                    <p>based on multiple Color Profiles</p>
+                    <a class="button is-primary">Try Now</a>
+                </div>
+                <div class="column has-text-centered">
+                    <img src="" alt="">
+                    <h2 class="subtitle">Logo Generator</h2>
+                    <p>using Generative Adversarial Networks</p>
+                    <a class="button is-primary">Coming Soonish</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- build:js -->
+    <script src="js/knockout.min.js"></script>
+    <script src="js/autocomplete.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+</html>
