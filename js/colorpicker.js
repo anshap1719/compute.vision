@@ -1,6 +1,6 @@
 const copiedHex = ko.observable();
 
-const selectedColor = ko.observable("Red"); // lazy
+const selectedColor = ko.observable("Blue Grey"); // lazy
 
 const bindings = {
     materialColors: [
