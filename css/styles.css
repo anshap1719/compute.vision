@@ -2,6 +2,10 @@ body {
     overflow-x: hidden !important;
 }
 
+* {
+    overflow-y: hidden;
+}
+
 .progress {
     width: 40%;
     min-width: 400px;
@@ -247,4 +251,12 @@ h4 {
         width: 100% !important;
         min-width: 0 !important;
     }
+}
+
+#contact {
+    min-height: 700px;
+}
+
+#contact, #contact * {
+    overflow-y: visible;
 }
