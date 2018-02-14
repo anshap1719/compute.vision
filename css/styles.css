@@ -191,6 +191,47 @@ h4 {
     justify-content: space-between;
 }
 
+.demo-browser {
+    background: #2c3e50 url(../img/demo/browser.png) 0 0 no-repeat;
+    background-size: 659px 42px;
+    color: #ffffff;
+    margin: 0 41px 140px 0;
+    padding-top: 42px;
+    border-radius: 0 0 6px 6px;
+}
+
+.demo-browser-author {
+    background: url(https://logo.clearbit.com/xbox.com?s=256) center no-repeat;
+    border: 3px solid #ffffff;
+    display: block;
+    height: 256px;
+    margin: 0 auto;
+    width: 256px;
+    border-radius: 50%;
+}
+
+.demo-browser-google {
+    background: url(https://logo.clearbit.com/google.com?s=256) center no-repeat;
+    border: 3px solid #ffffff;
+    display: block;
+    height: 256px;
+    margin: 0 auto;
+    width: 256px;
+    border-radius: 50%;
+}
+
+.demo-browser-content {
+    /*background-color: #34495e;*/
+    overflow: hidden;
+    padding: 21px 0 0;
+    border-radius: 0 0 6px;
+}
+.demo-browser-content > img {
+    border: 6px solid black;
+    margin: 0 8px 20px 8px;
+    width: 146px;
+}
+
 @media only screen and (max-width: 600px) {
     body {
         padding: 40px 20px;
