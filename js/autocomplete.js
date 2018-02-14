@@ -46,7 +46,7 @@ const autocomplete = inp => {
     arr = JSON.parse(ajax.responseText);
 
     for (i = 0; i < arr.length; i++) {
-        b = document.createElement("DIV");
+        const b = document.createElement("DIV");
         const text = document.createElement("P");
         const image = document.createElement("IMG");
         const url = document.createElement("P");
@@ -115,27 +115,6 @@ const autocomplete = inp => {
         }
     });
 
-    // Requires Utils.js to be imported first
-    addListenerMulti(inp, 'keydown keyup change', () => {
-        if (inp.value === "") {
-            document.querySelector('.autocomplete').classList.remove('is-loading');
-        } else {
-            document.querySelector('.autocomplete').classList.add('is-loading');
-        }
-    });
-
-    inp.addEventListener('focus', () => {
-        if (inp.value === "") {
-            document.querySelector('.autocomplete').classList.remove('is-loading');
-        } else {
-            document.querySelector('.autocomplete').classList.add('is-loading');
-        }
-    });
-
-    inp.addEventListener('blur', () => {
-        document.querySelector('.autocomplete').classList.remove('is-loading');
-    });
-
     document.addEventListener("click", e => {
         closeAllLists(e.target);
     });
@@ -165,7 +144,7 @@ const getResults = () => {
     request.send(uri);
 };
 
-arr = [];
+let arr = [];
 
 const delay = 200;
 const input = document.querySelector('#search');
@@ -173,6 +152,7 @@ const ajax = new XMLHttpRequest();
 let lastKeyUp = 0;
 let cb;
 input.onkeyup = e => {
+    document.querySelector('.autocomplete').classList.add('is-loading');
     lastKeyUp = e.timeStamp;
     if (e.timeStamp - lastKeyUp > delay) {
         console.log(input.value);
@@ -180,10 +160,10 @@ input.onkeyup = e => {
         ajax.send();
 
         ajax.onload = () => {
-
             arr = JSON.parse(ajax.responseText);
             console.log(arr.length);
             autocomplete(document.getElementById("search"));
+            document.querySelector('.autocomplete').classList.remove('is-loading');
         }
     } else {
         cb = setTimeout(doSearch, delay)
@@ -195,9 +175,9 @@ const doSearch = () => {
     ajax.send();
 
     ajax.onload = () => {
-
         arr = JSON.parse(ajax.responseText);
         autocomplete(document.getElementById("search"));
+        document.querySelector('.autocomplete').classList.remove('is-loading');
     };
 };
 
