@@ -32,8 +32,13 @@ gulp.task('js', ['css'], function () {
         .pipe(gulp.dest('./docs/scripts/'))
 });
 
-gulp.task('html', ['js'], function () {
-    return gulp.src('./index.html')
+gulp.task('assets', ['js'], function () {
+    return gulp.src('./assets/**/*.*')
+        .pipe(gulp.dest('./docs/assets/'))
+});
+
+gulp.task('html', ['assets'], function () {
+    return gulp.src('./*.html')
         .pipe(htmlreplace({
             css: './styles/bundle.css',
             js: './scripts/bundle.js'

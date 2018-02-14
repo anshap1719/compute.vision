@@ -5,10 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- build:css -->
-    <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href="css/results.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="./styles/bundle.css">
     <title>Results</title>
 </head>
 <body onload="fetchResults()" style="background-color: #F5F5F5">
@@ -33,9 +30,7 @@
         </div>
     </section>
 
-    <!-- build:js -->
-    <script src="js/aa.knockout.min.js"></script>
-    <!-- endbuild -->
+    <script src="./scripts/bundle.js"></script>
     <script>
         const bindings = {shapeResults: ko.observable([]), colorResults: ko.observable([]), queryImage: ko.observable("")};
         ko.applyBindings(bindings);
