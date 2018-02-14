@@ -15,6 +15,16 @@ addListenerMulti(fileInput, 'dragleave blur drop', () => {
 });
 
 fileInput.addEventListener('change', event => {
+    const progress = document.getElementsByClassName('progress').item(0);
+    progress.style.visibility = 'visible';
+    const inverval = setInterval(() => {
+        if (progress.value < 50) {
+            progress.value += 5
+        } else if (progress.value < 80) {
+            progress.value += 3;
+        }
+    }, 500);
+
     const _this = event.target;
     const filesCount = _this.files.length;
     const file = _this.files[0];
@@ -70,7 +80,11 @@ fileInput.addEventListener('change', event => {
                         url: `https://s3.ap-south-1.amazonaws.com/clogos/${t}`
                     }));
                     sessionStorage.setItem('results', JSON.stringify(urls));
-                    window.location.href = "./results.html";
+                    clearInterval(inverval);
+                    progress.value = 100;
+                    setTimeout(() => {
+                        window.location.href = "./results.html";
+                    }, 500);
                 } else {
                     console.log("Error: ", xhr.response);
                 }
